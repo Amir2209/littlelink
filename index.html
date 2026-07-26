@@ -38,6 +38,19 @@
 
   </head>
 
+	<!-- Custom Mobile Text Fix -->
+    <style>
+      @media (max-width: 480px) {
+        h1 div {
+          font-size: 1.6rem; /* Shrinks the text size strictly on mobile */
+          white-space: nowrap; /* Forces the name to stay on one line */
+          text-align: center; /* Ensures it stays perfectly centered */
+        }
+      }
+    </style>
+
+  </head>
+
 <body>
 
     <div class="container">
@@ -61,7 +74,7 @@
 			  
 			  <!-- Gravatar Profile -->
               <a class="button button-gravatar" href="https://gravatar.com/zulazmir" target="_blank" rel="noopener" role="button">
-                <img class="icon" aria-hidden="true" src="images/icons/Gravatar_Icon.svg" alt="Gravatar Logo">Gravatar Profile
+                <img class="icon" aria-hidden="true" src="images/icons/Gravatar_Icon.svg" alt="Gravatar Logo">Gravatar
               </a>
 
 
