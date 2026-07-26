@@ -332,6 +332,12 @@
 	--button-background:#2867b2;
 }
 
+/* Gravatar */
+.button-gravatar {
+    --button-text: #ffffff;
+    --button-background: #7a9f5b;
+}
+
 /* Mailchimp */
 .button-mailchimp {
 	--button-text:#000000;
