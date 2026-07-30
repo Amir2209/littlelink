@@ -1,382 +1,460 @@
 /*
-* LittleLink
-* https://littlelink.io
-* Free to use under the MIT license
-* http://www.opensource.org/licenses/mit-license.php
+* LittleLink — Glass UI with Original Logos
+* Design aligned with portfolio website
 */
 
-/* Base Typography Settings
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* ============================================================
+   FONTS & BASE
+   ============================================================ */
 :root {
-	font-size:16px;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --spacing-xs: 0.5rem;
+  --spacing-s: 1rem;
+  --spacing-m: 1.5rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+
+  --radius-card: 1.5rem;
+  --radius-button: 0.75rem;
+  --radius-pill: 9999px;
+
+  --transition-fast: 0.2s ease;
+  --transition-med: 0.3s ease;
 }
 
-/* Grid
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  .container {
-	position:relative;
-	width:100%;
-	max-width:37.5rem;     				/* 600px */
-    text-align:center;
-	margin:0 auto;
-	padding:3rem 1.25rem 0 1.25rem;
-	box-sizing:border-box;
-}
-.container-left {
-	position:relative;
-	width:100%;
-	max-width:37.5rem;
-	text-align:left;
-	margin:0 auto;
-	padding:0 1.25rem;
-	box-sizing:border-box;
-}
-.container-left p {
-	margin-bottom: 1rem;  				/* 16px space between paragraphs */
-  }
-.column {
-	position:center;
-	width:100%;
-	float:center;
-	box-sizing:border-box;
-}
-/* For devices larger than 400px */
-  @media (min-width:25rem) {            /* 400px */
-    .container {
-	width:85%;
-	padding-left:0;
-	padding-right:0;
-}
-}/* For devices larger than 550px */
-  @media (min-width:34.375rem) {        /* 550px */
-    .container {
-	width:80%;
-}
-.column,.columns {
-	margin-left:0;
-}
-.column:first-child,.columns:first-child {
-	margin-left:0;
-}
-}
-
-/* Base Styles
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  body {
-	margin:0;
-	padding:0;
-	background-color:#ffffff;
-	color:#1a1a1a;
-	font-family:"Open Sans",system-ui;
-	font-size:1.125rem;     				/* 18px */
-    font-weight:400;
-	line-height:1.6;
-}
-
-/* Typography
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  h1 {
-	margin:0 0 0.5rem 0;
-	font-size:3rem;         		/* 48px */
-    font-weight:800;
-	line-height:1;
-	letter-spacing:0;
-	word-wrap:break-word;
-	overflow-wrap:break-word;
-	hyphens:auto;           		/* Delete this to remove automatic hyphen on line break */
-}
-.container p {
-	margin:0 0 2rem 0;
-}
-
-/* Base Typography Settings
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Base size - 16px browser default */
-:root {
-  font-size:16px;           /* Using a 1.25 modular scale for typography */
-  --scale-0:1rem;           /* 16px */
-  --scale-1:1.25rem;        /* 20px */
-  --scale-2:1.563rem;       /* 25px */
-  --scale-3:1.953rem;       /* 31px */
-  --scale-4:2.441rem;       /* 39px */
-  --scale-5:3.052rem;       /* 49px */
-
-  /* Spacing units */
-  --spacing-xs:0.5rem;      /* 8px */
-  --spacing-s:1rem;         /* 16px */
-  --spacing-m:1.5rem;       /* 24px */
-  --spacing-l:2rem;         /* 32px */
-  --spacing-xl:3rem;        /* 48px */
-  --spacing-xxl:4rem;       /* 64px */
-}
-
-/* Avatar */
-.avatar {
-	width: 8rem;             /* 128px */
-	height: 8rem;
-	border-radius: 50%;
-	object-fit: cover;
-	background-position: center;
-	margin-bottom: var(--spacing-l);
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-  }
-
-/* Typography Scale */
-h1 {
-	margin:0 0 var(--spacing-m) 0;
-	font-size:var(--scale-5);           /* ~49px */
-  	font-weight:800;
-	line-height:1.1;
-	letter-spacing:-0.02em;
-	word-wrap:break-word;
-	overflow-wrap:break-word;
-}
+/* Base body — grid dot background */
 body {
-	font-size:var(--scale-1);           /* 20px */
-  	line-height:1.6;
-}
-.container p {
-	margin:0 0 var(--spacing-xl) 0;
-	font-size:var(--scale-1);
-	line-height:1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: #0f172a;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Container spacing */
+/* ============================================================
+   CONTAINER & CARD — Glass-morphism
+   ============================================================ */
 .container {
-	padding:var(--spacing-xl) var(--spacing-m) 0 var(--spacing-m);
-	text-align:center;
+  width: 100%;
+  max-width: 38rem;
+  padding: var(--spacing-m);
+  box-sizing: border-box;
 }
 
-/* Footer */
-footer {
-	margin:var(--spacing-xxl) 0;            /* 4rem (64px) top and bottom */
-    font-size:var(--scale-0);
+.card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-xl) var(--spacing-l) var(--spacing-l);
+  box-shadow: 0 12px 40px -12px rgba(14, 116, 144, 0.15);
+  transition: border-color var(--transition-med), box-shadow var(--transition-med);
+  text-align: center;
 }
 
-/* Responsive adjustments */
-@media (max-width:34.375rem) {              /* 550px */
-  h1 {
-	font-size:var(--scale-4);
+.card:hover {
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 16px 48px -16px rgba(6, 182, 212, 0.12);
 }
-body {
-	font-size:var(--scale-0);
+
+/* ============================================================
+   STATUS PILL
+   ============================================================ */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 1rem 0.3rem 0.8rem;
+  margin-bottom: var(--spacing-m);
+  border-radius: var(--radius-pill);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #065f46;
 }
-.container p {
-	font-size:var(--scale-0);
+
+.status-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #10b981;
+  animation: pulse-dot 1.8s ease-in-out infinite;
 }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* ============================================================
+   AVATAR
+   ============================================================ */
 .avatar {
-	margin-bottom:var(--spacing-m);
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+  background-position: center;
+  margin: 0 auto var(--spacing-m);
+  display: block;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.12);
 }
-footer {
-	margin:var(--spacing-xl) 0;         	/* 3rem (48px) top and bottom */
-}
+.avatar--rounded { border-radius: 50%; }
+.avatar--soft   { border-radius: 0.75rem; }
+.avatar--none   { border-radius: 0; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-/* Links
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  a {
-	color:#2457F5;
-	text-decoration:underline;
-}
-a:hover {
-	color:#083BDA;
+.name-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #0284c7 50%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Buttons
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.button,button {
-	display:inline-flex;
-	align-items:center;
-	justify-content:center;
-	width:18.75rem;             	/* 300px */
- 	min-height:3rem;                /* 48px */
-  	padding:0.75rem 1rem;         	/* 12px ; 16px */
-  	font-size:1.125rem;           	/* 18px */
-  	font-weight:700;
-	text-decoration:none;
-	white-space:normal;
-  	background-color:var(--button-background,transparent);
-	color:var(--button-text,#000000);
-	border:var(--button-border,none);
-	border-radius:0.5rem;
-	cursor:pointer;
-	box-sizing:border-box;
-	hyphens:auto;               	/* Delete this to remove automatic hyphen on line break */
-  	margin-bottom:1rem;
-	text-align:center;
-	line-height:1.3;
+.tagline {
+  margin: 0 0 var(--spacing-l) 0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: #475569;
+  letter-spacing: -0.01em;
 }
 
-/* Icons
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tagline-prefix {
+  color: #06b6d4;
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+/* ============================================================
+   BUTTON STACK — Glass Design with Brand Colors
+   Logos remain untouched (no filters, no color changes)
+   ============================================================ */
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.button,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 22rem;
+  min-height: 3.2rem;
+  padding: 0.7rem 1.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  box-sizing: border-box;
+  line-height: 1.3;
+  text-align: center;
+  white-space: nowrap;
+
+  /* --- Glass Default Styles --- */
+  background: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.25);
+  color: var(--brand-hex, #1a1a1a);
+  transition: all 0.25s ease;
+
+  /* ———— LOGO PROTECTION ———— */
+  /* Icons keep their original colors, no filters applied */
+}
+
+.button:hover,
+button:hover {
+  background: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.22);
+  border-color: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.45);
+  box-shadow: 0 0 28px -8px rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.3);
+  transform: translateY(-2px);
+}
+
+.button:active,
+button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ----- BUTTON ICONS — PRESERVED ORIGINAL APPEARANCE ----- */
 .icon {
-	width:1.25rem;
-	height:1.25rem;
-	margin-right:0.5rem;
-	flex-shrink:0;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  /* No filter — logos stay as-is */
+  filter: none !important;
 }
 
-/* Avatar
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.avatar {
-	width: 8rem;             /* 128px */
-	height: 8rem;
-	object-fit: cover;
-	background-position: center;
-	margin-bottom: var(--spacing-l);
+/* ============================================================
+   FOOTER — Terminal-style signature
+   ============================================================ */
+footer {
+  margin-top: var(--spacing-l);
+  padding-top: var(--spacing-m);
+  border-top: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.footer-signature {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #64748b;
+  letter-spacing: 0.01em;
+}
+
+.footer-prompt {
+  color: #06b6d4;
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+.footer-eof {
+  margin-left: 0.6rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 34rem) {
+  .card {
+    padding: var(--spacing-l) var(--spacing-m) var(--spacing-m);
   }
-
-   /* Modifier for no avatar rounding */
-   .avatar--none {
-	border-radius: 0%;
+  h1 {
+    font-size: 1.8rem;
   }
-
-  /* Modifier for rounded avatar */
-  .avatar--rounded {
-	border-radius: 50%;
+  .tagline {
+    font-size: 0.85rem;
   }
-
-  /* Modifier for slightly rounded corners */
-  .avatar--soft {
-	border-radius: 0.5rem;   /* 8px rounded corners */
+  .button,
+  button {
+    font-size: 0.85rem;
+    min-height: 2.8rem;
+    padding: 0.6rem 1rem;
   }
+  .avatar {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+  .status-pill {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.8rem 0.2rem 0.6rem;
+  }
+}
 
-/* Theme System
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Light theme is default above */
+/* ============================================================
+   THEME — LIGHT / DARK / AUTO
+   ============================================================ */
 
-/* Dark theme */
+/* --- LIGHT (default) --- */
+:root {
+  color-scheme: light;
+}
+
+/* --- DARK --- */
 :root.theme-dark {
-	color-scheme:dark;
+  color-scheme: dark;
 }
-:root.theme-dark :focus-visible {
-	outline: 2px solid #4899F7;
-	outline-offset: 2px;
-  }
+
 :root.theme-dark body {
-	background-color:#121212;
-	color:#ffffff;
-}
-:root.theme-dark a:not(.button) {
-	color:#4899F7;
-}
-:root.theme-dark a:not(.button):hover {
-	color:#7AB8FF;
+  background-color: #0b1120;
+  background-image: radial-gradient(rgba(51, 65, 85, 0.35) 1px, transparent 1px);
+  color: #e2e8f0;
 }
 
-/* Auto theme */
+:root.theme-dark .card {
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(51, 65, 85, 0.7);
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.6);
+}
+
+:root.theme-dark .card:hover {
+  border-color: rgba(6, 182, 212, 0.35);
+}
+
+:root.theme-dark .name-gradient {
+  background: linear-gradient(135deg, #e2e8f0 0%, #22d3ee 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+:root.theme-dark .tagline {
+  color: #94a3b8;
+}
+
+:root.theme-dark .status-pill {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #6ee7b7;
+}
+
+:root.theme-dark .status-dot {
+  background: #34d399;
+}
+
+:root.theme-dark .button,
+:root.theme-dark button {
+  color: #ffffff;
+  background: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.2);
+  border-color: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.3);
+}
+
+:root.theme-dark .button:hover,
+:root.theme-dark button:hover {
+  background: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.35);
+  border-color: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.6);
+  box-shadow: 0 0 32px -10px rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.4);
+}
+
+/* ---- In dark mode, logos keep their original colors (no invert) ---- */
+:root.theme-dark .icon {
+  filter: none !important;
+}
+
+:root.theme-dark .footer-signature {
+  color: #64748b;
+  border-color: #1e293b;
+}
+
+:root.theme-dark .footer-prompt {
+  color: #22d3ee;
+}
+
+:root.theme-dark .footer-eof {
+  color: #475569;
+}
+
+/* --- AUTO (follows system) --- */
 :root.theme-auto {
-	color-scheme:light dark;
+  color-scheme: light dark;
 }
-@media (prefers-color-scheme:dark) {
-	:root.theme-auto body {
-	background-color:#121212;
-	color:#ffffff;
-}
-:root.theme-auto :focus-visible {
-    outline: 2px solid #4899F7;
-    outline-offset: 2px;
+
+@media (prefers-color-scheme: dark) {
+  :root.theme-auto body {
+    background-color: #0b1120;
+    background-image: radial-gradient(rgba(51, 65, 85, 0.35) 1px, transparent 1px);
+    color: #e2e8f0;
   }
-:root.theme-auto a:not(.button) {
-	color:#4899F7;
-}
-:root.theme-auto a:not(.button):hover {
-	color:#7AB8FF;
-}
-}
-
-/* Button Text Color Override
-    –––––––––––––––––––––––––––––––––––––––––––––––––– */
-    .button:hover,button:hover {
-	color:var(--button-text);
-}
-
-/* Responsive Typography
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  @media (max-width:34.375rem) {            /* 550px */
-    h1 {
-	font-size:2rem;                         /* 32px */
-	}
-	body {
-	font-size:1rem;                    		/* 16px */
-	}
-}
-
-/* Privacy Page Styles
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-nav {
-	margin:var(--spacing-l) 0;
-	text-align:left;
-}
-section {
-	margin:var(--spacing-xl) 0;
-	text-align:left;
-}
-h2 {
-	font-size:var(--scale-3);
-	font-weight:700;
-	margin-bottom:var(--spacing-m);
-}
-h3 {
-	font-size:var(--scale-2);
-	font-weight:600;
-	margin:var(--spacing-l) 0 var(--spacing-s) 0;
-}
-ul {
-	list-style:none;
-	padding:0;
-	margin:0 0 var(--spacing-m) 0;
-}
-ul li {
-	margin-bottom:var(--spacing-xs);
-}
-
-/* Privacy page specific responsive adjustments */
-  @media (max-width:34.375rem) {
-	h2 {
-	font-size:var(--scale-2);
-	}
-	h3 {
-	font-size:var(--scale-1);
-	}
-	section {
-	margin:var(--spacing-l) 0;
-	}
+  :root.theme-auto .card {
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-color: rgba(51, 65, 85, 0.7);
+    box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.6);
+  }
+  :root.theme-auto .card:hover {
+    border-color: rgba(6, 182, 212, 0.35);
+  }
+  :root.theme-auto .name-gradient {
+    background: linear-gradient(135deg, #e2e8f0 0%, #22d3ee 50%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  :root.theme-auto .tagline {
+    color: #94a3b8;
+  }
+  :root.theme-auto .status-pill {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #6ee7b7;
+  }
+  :root.theme-auto .status-dot {
+    background: #34d399;
+  }
+  :root.theme-auto .button,
+  :root.theme-auto button {
+    color: #ffffff;
+    background: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.2);
+    border-color: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.3);
+  }
+  :root.theme-auto .button:hover,
+  :root.theme-auto button:hover {
+    background: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.35);
+    border-color: rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.6);
+    box-shadow: 0 0 32px -10px rgba(var(--brand-r, 255), var(--brand-g, 255), var(--brand-b, 255), 0.4);
+  }
+  :root.theme-auto .icon {
+    filter: none !important;
+  }
+  :root.theme-auto .footer-signature {
+    color: #64748b;
+    border-color: #1e293b;
+  }
+  :root.theme-auto .footer-prompt {
+    color: #22d3ee;
+  }
+  :root.theme-auto .footer-eof {
+    color: #475569;
+  }
 }
 
-/* Font Face Definitions
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@font-face {
-	font-display:swap;
-	font-family:'Open Sans';
-	font-style:normal;
-	font-weight:400;
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot');
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot?#iefix') format('embedded-opentype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2') format('woff2'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.ttf') format('truetype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.svg#OpenSans') format('svg');
+/* ============================================================
+   ACCESSIBILITY — Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .status-dot {
+    animation: none !important;
+  }
+  .button:hover,
+  button:hover {
+    transform: none !important;
+  }
 }
-@font-face {
-	font-display:swap;
-	font-family:'Open Sans';
-	font-style:normal;
-	font-weight:600;
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.eot');
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2') format('woff2'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.woff') format('woff'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.ttf') format('truetype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.svg#OpenSans') format('svg');
+
+/* ============================================================
+   FOCUS VISIBLE
+   ============================================================ */
+:focus:not(:focus-visible) {
+  outline: none;
 }
-@font-face {
-	font-display:swap;
-	font-family:'Open Sans';
-	font-style:normal;
-	font-weight:700;
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.eot');
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.eot?#iefix') format('embedded-opentype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2') format('woff2'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.ttf') format('truetype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.svg#OpenSans') format('svg');
-}
-@font-face {
-	font-display:swap;
-	font-family:'Open Sans';
-	font-style:normal;
-	font-weight:800;
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.eot');
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.eot?#iefix') format('embedded-opentype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.woff2') format('woff2'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.woff') format('woff'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.ttf') format('truetype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.svg#OpenSans') format('svg');
+
+:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
 }
